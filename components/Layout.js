@@ -3,9 +3,9 @@ import Head from "next/head";
 import Router from "next/router";
 import NProgress from "nprogress";
 
-Router.onRouteChangeStart = url => {
-    console.log(url);
-    NProgress.start();
+Router.onRouteChangeStart = (url) => {
+  console.log(url);
+  NProgress.start();
 };
 
 Router.onRouteChangeComplete = () => NProgress.done();
@@ -14,11 +14,7 @@ Router.onRouteChangeError = () => NProgress.done();
 export default ({ children, title }) => (
   <div className="root">
     <Head>
-      <title>Next Portfolio</title>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
-      />
+      <title>NextPortfolio</title>
     </Head>
     <header>
       <Link href="/">
@@ -29,6 +25,9 @@ export default ({ children, title }) => (
       </Link>
       <Link href="/hireme">
         <a>Hire Me</a>
+      </Link>
+      <Link href="/blog">
+        <a>Blog</a>
       </Link>
     </header>
 
